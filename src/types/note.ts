@@ -1,6 +1,12 @@
 export interface Note {
   title: string;
   content: string;
-  tag: "Todo" | "Work" | "Personal" | "Meeting" | "Shopping";
+  tag: NoteTag;
   id: string;
 }
+
+export type NoteTag = "Todo" | "Work" | "Personal" | "Meeting" | "Shopping";
+
+export type NoteId = Note["id"];
+
+export type NotePost = Omit<Note, "id">;
